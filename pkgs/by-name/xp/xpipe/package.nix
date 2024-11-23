@@ -21,6 +21,9 @@
 , libXrender
 , libXtst
 , libXxf86vm
+, util-linux
+, socat
+, hicolor-icon-theme
 }:
 
 let
@@ -33,14 +36,14 @@ let
   }.${system} or throwSystem;
 
   hash = {
-    x86_64-linux = "sha256-0Cdu1ntG8ZPHbLOIFvVFO6Dj8ZBHl4Rb+MM46luRKj4=";
+    x86_64-linux = "sha256-up0iDqqQ4vnkFX/gWwhLijY6qBIyDuXCDiyoWm5YuFM=";
   }.${system} or throwSystem;
 
   displayname = "XPipe";
 
 in stdenvNoCC.mkDerivation rec {
   pname = "xpipe";
-  version = "12.0";
+  version = "13.2";
 
   src = fetchzip {
     url = "https://github.com/xpipe-io/xpipe/releases/download/${version}/xpipe-portable-linux-${arch}.tar.gz";
